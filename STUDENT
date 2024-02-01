@@ -1,3 +1,15 @@
+Create a table STUDENT with following columns and insert values into atble:
+USN,Name,DOB,Semester,Percentage
+Execute the following queries
+1. display the total no. of stduents in class
+2. find the aggrigate percentage fof class
+3. display the name of students with hieght and lowest percentage
+4. display the name and percentage of all students
+5. disppay info of student with usn=103
+6. change the name of student to'ram' bearing USN=4SF18CS011
+
+===============================================================================================================================================================================
+
 SQL> CREATE TABLE STUDENT(USN VARCHAR(10),NAME VARCHAR(20),DOB DATE,SEMESTER INT,PERCENTAGE FLOAT);
 
 Table created.
@@ -132,3 +144,11 @@ RAHUL                        80
 UMESH                        90
 
 10 rows selected.
+
+SQL> SELECT * FROM STUDENT WHERE USN=103;
+
+USN        NAME                 DOB         SEMESTER PERCENTAGE
+---------- -------------------- --------- ---------- ----------
+103        RAJU                 30-APR-02          5         76
+
+
