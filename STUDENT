@@ -1,0 +1,118 @@
+SQL> CREATE TABLE STUDENT(USN VARCHAR(10),NAME VARCHAR(20),DOB DATE,SEMESTER INT,PERCENTAGE FLOAT);
+
+Table created.
+
+SQL> DESC STUDENT
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ USN                                                VARCHAR2(10)
+ NAME                                               VARCHAR2(20)
+ DOB                                                DATE
+ SEMESTER                                           NUMBER(38)
+ PERCENTAGE                                         FLOAT(126)
+
+SQL> INSERT INTO STUDENT(USN,NAME,DOB,SEMESTER,PERCENTAGE)VALUES('101','AKHIL','12-JAN-2001','5','78
+');
+
+1 row created.
+
+SQL> INSERT INTO STUDENT(USN,NAME,DOB,SEMESTER,PERCENTAGE)VALUES('102','MANJU','22-JUNE-2001','5','8
+8');
+
+1 row created.
+
+SQL> INSERT INTO STUDENT VALUES('&USN','&NAME','&DOB','&SEMESTER','&PERCENTAGE');
+Enter value for usn: 103
+Enter value for name: RAJU
+Enter value for dob: 30-APRIL-2002
+Enter value for semester: 5
+Enter value for percentage: 76
+old   1: INSERT INTO STUDENT VALUES('&USN','&NAME','&DOB','&SEMESTER','&PERCENTAGE')
+new   1: INSERT INTO STUDENT VALUES('103','RAJU','30-APRIL-2002','5','76')
+
+1 row created.
+
+SQL> INSERT INTO STUDENT VALUES('&USN','&NAME','&DOB','&SEMESTER','&PERCENTAGE');
+Enter value for usn: 104
+Enter value for name: ARUN
+Enter value for dob: 23-OCT-2001
+Enter value for semester: 5
+Enter value for percentage: 89
+old   1: INSERT INTO STUDENT VALUES('&USN','&NAME','&DOB','&SEMESTER','&PERCENTAGE')
+new   1: INSERT INTO STUDENT VALUES('104','ARUN','23-OCT-2001','5','89')
+
+1 row created.
+
+SQL> INSERT INTO STUDENT VALUES('&USN','&NAME','&DOB','&SEMESTER','&PERCENTAGE');
+Enter value for usn: 105
+Enter value for name: SHAMI
+Enter value for dob: 13-JULY-2000
+Enter value for semester: 4
+Enter value for percentage: 73
+old   1: INSERT INTO STUDENT VALUES('&USN','&NAME','&DOB','&SEMESTER','&PERCENTAGE')
+new   1: INSERT INTO STUDENT VALUES('105','SHAMI','13-JULY-2000','4','73')
+
+1 row created.
+
+SQL> INSERT INTO STUDENT VALUES('&USN','&NAME','&DOB','&SEMESTER','&PERCENTAGE');
+Enter value for usn: 106
+Enter value for name: MANISH
+Enter value for dob: 18-FEB-2001
+Enter value for semester: 6
+Enter value for percentage: 68
+old   1: INSERT INTO STUDENT VALUES('&USN','&NAME','&DOB','&SEMESTER','&PERCENTAGE')
+new   1: INSERT INTO STUDENT VALUES('106','MANISH','18-FEB-2001','6','68')
+
+1 row created.
+
+SQL> INSERT INTO STUDENT VALUES('&USN','&NAME','&DOB','&SEMESTER','&PERCENTAGE');
+Enter value for usn: 107
+Enter value for name: RAJESH
+Enter value for dob: 22-NOV-2000
+Enter value for semester: 6
+Enter value for percentage: 99
+old   1: INSERT INTO STUDENT VALUES('&USN','&NAME','&DOB','&SEMESTER','&PERCENTAGE')
+new   1: INSERT INTO STUDENT VALUES('107','RAJESH','22-NOV-2000','6','99')
+
+1 row created.
+
+SQL> INSERT INTO STUDENT VALUES('&USN','&NAME','&DOB','&SEMESTER','&PERCENTAGE');
+Enter value for usn: 108
+Enter value for name: PEARL
+Enter value for dob: 11-MARCH-2001
+Enter value for semester: 6
+Enter value for percentage: 88
+old   1: INSERT INTO STUDENT VALUES('&USN','&NAME','&DOB','&SEMESTER','&PERCENTAGE')
+new   1: INSERT INTO STUDENT VALUES('108','PEARL','11-MARCH-2001','6','88')
+
+1 row created.
+
+SQL> INSERT INTO STUDENT VALUES('&USN','&NAME','&DOB','&SEMESTER','&PERCENTAGE');
+Enter value for usn: 109
+Enter value for name: RAHUL
+Enter value for dob: 20-JAN-2001
+Enter value for semester: 6
+Enter value for percentage: 80
+old   1: INSERT INTO STUDENT VALUES('&USN','&NAME','&DOB','&SEMESTER','&PERCENTAGE')
+new   1: INSERT INTO STUDENT VALUES('109','RAHUL','20-JAN-2001','6','80')
+
+1 row created.
+
+SQL> INSERT INTO STUDENT VALUES('&USN','&NAME','&DOB','&SEMESTER','&PERCENTAGE');
+Enter value for usn: 110
+Enter value for name: UMESH
+Enter value for dob: 31-AUG-2001
+Enter value for semester: 6
+Enter value for percentage: 90
+old   1: INSERT INTO STUDENT VALUES('&USN','&NAME','&DOB','&SEMESTER','&PERCENTAGE')
+new   1: INSERT INTO STUDENT VALUES('110','UMESH','31-AUG-2001','6','90')
+
+1 row created.
+
+SQL> SELECT COUNT(*) FROM STUDENT
+  2  
+SQL> SELECT COUNT(*) FROM STUDENT;
+
+  COUNT(*)
+----------
+        10
