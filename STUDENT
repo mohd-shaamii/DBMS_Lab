@@ -116,3 +116,19 @@ SQL> SELECT COUNT(*) FROM STUDENT;
   COUNT(*)
 ----------
         10
+SQL> SELECT NAME,PERCENTAGE FROM STUDENT;
+
+NAME                 PERCENTAGE
+-------------------- ----------
+AKHIL                        78
+MANJU                        88
+RAJU                         76
+ARUN                         89
+SHAMI                        73
+MANISH                       68
+RAJESH                       99
+PEARL                        88
+RAHUL                        80
+UMESH                        90
+
+10 rows selected.
