@@ -91,3 +91,80 @@ FROM STUDENT S, SEMSEC S1,CLASS C
 WHERE S.USN=C.USN AND S1.SSID=C.SSID 
 GROUP BY (GENDER,SEM,SECTION) ORDER BY (SEM);
 
+
+
+
+SQL> CREATE VIEW TEST_MARKS
+  2  AS SELECT SUBCODE,TESTT1 FROM IAMARKS
+  3  
+SQL> CREATE VIEW TEST_MARKS
+  2  AS SELECT SUBCODE,TESTI FROM IAMARKS
+  3  WHERE USN='4SF20CD001';
+
+View created.
+
+SQL> SELECT * FROM TEST_MARKS;
+
+SUBCODE      TESTI
+------- ----------
+20CS31          38
+20CS32          28
+
+SQL> UPDATE IAMARKS SET
+  2  FINALIA=GREATEST((TESTI+TEST2),
+  3  (TESTI+TEST3),(TEST3+TEST2))/2;
+
+6 rows updated.
+
+SQL> SELECT * FROM IAMARKS;
+
+USN                  SUBCODE       SSID      TESTI      TEST2      TEST3
+-------------------- ------- ---------- ---------- ---------- ----------
+   FINALIA
+----------
+4SF20CD001           20CS31           1         38         35         32
+        37
+
+4SF20CD001           20CS32           1         28         26         29
+        29
+
+4SF20CS088           20CS31           2         38         42         32
+        40
+
+
+USN                  SUBCODE       SSID      TESTI      TEST2      TEST3
+-------------------- ------- ---------- ---------- ---------- ----------
+   FINALIA
+----------
+4SF20CS089           20CS33           3         42         42         41
+        42
+
+4SF20CS098           20CS34           4         48         46         50
+        49
+
+4SF20IS109           20CS35           5         28         26         29
+        29
+
+
+6 rows selected.
+
+
+SQL> SELECT USN,FINALIA,
+  2  CASE
+  3  WHEN FINALIA BETWEEN 45 AND 50 THEN 'OUTSTANDING'
+  4  WHEN FINALIA BETWEEN 40 AND 45 THEN 'GOOD'
+  5  WHEN FINALIA BETWEEN 30 AND 40 THEN 'AVERAGE'
+  6  WHEN FINALIA <30 THEN 'WEAK'
+  7  END
+  8  AS CATEGORY FROM IAMARKS I,
+  9  SEMSEC S WHERE I.SSID=S.SSID
+ 10  AND SEM=8 AND SECTION IN('A','B','C');
+
+USN                     FINALIA CATEGORY
+-------------------- ---------- -----------
+4SF20CS089                   42 GOOD
+4SF20CS098                   49 OUTSTANDING
+4SF20IS109                   29 WEAK
+
+SQL> 
+
